@@ -52,10 +52,6 @@ button, input, textarea, select {
   font: inherit;
 }
 
-button, a {
-  -webkit-tap-highlight-color: transparent;
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -270,7 +266,7 @@ h2 {
   color: #5e6778;
 }
 
-/* PETITE SIGNATURE */
+/* BANDEAU INTRODUCTIF */
 
 .intro-strip {
   border-bottom: 1px solid var(--line);
@@ -416,7 +412,7 @@ h2 {
   transform: translateX(4px);
 }
 
-/* À PROPOS */
+/* POURQUOI NOUS CHOISIR */
 
 .about {
   background: var(--soft);
@@ -460,7 +456,7 @@ h2 {
   border-radius: 50%;
   background: white;
   color: var(--blue);
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 
@@ -485,7 +481,7 @@ h2 {
   font-size: .91rem;
 }
 
-/* PETIT BANDEAU PERSONNALISÉ */
+/* BANDEAU CONTACT */
 
 .statement {
   padding: 65px 0;
@@ -649,7 +645,7 @@ h2 {
   background: #fff0f0;
 }
 
-/* FOOTER */
+/* PIED DE PAGE */
 
 .footer {
   padding: 25px 0;
@@ -685,7 +681,7 @@ h2 {
   color: var(--blue);
 }
 
-/* ANIMATIONS DISCRÈTES */
+/* RESPONSIVE */
 
 @media (prefers-reduced-motion: no-preference) {
   .fade-in {
@@ -706,10 +702,11 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
-
-/* TABLETTES */
 
 @media (max-width: 950px) {
   .nav-links { gap: 16px; }
@@ -719,8 +716,6 @@ h2 {
   .service-card:last-child { grid-column: 1 / -1; }
   .contact-grid { gap: 35px; }
 }
-
-/* TÉLÉPHONES */
 
 @media (max-width: 700px) {
   .container { width: calc(100% - 32px); }
@@ -759,10 +754,7 @@ h2 {
     text-align: center;
   }
 
-  .hero {
-    min-height: auto;
-    background: #edf2fa;
-  }
+  .hero { min-height: auto; }
 
   .hero-photo {
     inset: 0;
@@ -772,9 +764,7 @@ h2 {
       url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80");
   }
 
-  .hero-content {
-    padding: 70px 0;
-  }
+  .hero-content { padding: 70px 0; }
 
   .hero h1 {
     font-size: clamp(2.6rem, 10vw, 3.6rem);
@@ -805,12 +795,9 @@ h2 {
 
   .service-card:last-child { grid-column: auto; }
   .service-photo { height: 225px; }
-
   .about-grid { gap: 0; }
 
-  .about-item {
-    padding: 28px 10px;
-  }
+  .about-item { padding: 28px 10px; }
 
   .about-item + .about-item {
     border-left: none;
@@ -860,283 +847,287 @@ h2 {
 
 <main>
 
-  <!-- ACCUEIL -->
-  <section class="hero" id="accueil">
-    <div class="hero-photo" aria-hidden="true"></div>
+<section class="hero" id="accueil">
+  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content fade-in">
+      <span class="eyebrow">Une initiative locale</span>
+      <h1>Deux jeunes de 3ème,<br><span>de grandes idées.</span></h1>
+      <p>
+        On est deux potes, ultra motivés, qui avons créé notre
+        Junior Association pour proposer des services numériques
+        et physiques à des prix accessibles. Notre objectif :
+        aider les commerçants et les particuliers, tout en apprenant
+        et en construisant des projets concrets.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#services">
+          Découvrir nos services <span aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-outline" href="#contact">Nous contacter</a>
+      </div>
+      <div class="hero-note">
+        Des idées pensées ici. Des services utiles au quotidien.
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="container">
-      <div class="hero-content fade-in">
-        <span class="eyebrow">Une initiative locale</span>
+<section class="intro-strip">
+  <div class="container intro-inner">
+    <p><strong>Du numérique au concret.</strong> Des projets adaptés à vos besoins.</p>
+    <span class="intro-mark">ALPHA SERVICES JUNIOR — 01</span>
+  </div>
+</section>
 
-        <h1>
-          Deux jeunes de 3ème,<br>
-          <span>de grandes idées.</span>
-        </h1>
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Ce que nous faisons</span>
+      <h2>Nos services</h2>
+      <p>
+        Des solutions concrètes, utiles et adaptées à vos besoins,
+        que ce soit en ligne ou dans la vraie vie.
+      </p>
+    </div>
 
-        <p>
-          On est deux potes, ultra motivés, qui avons créé notre
-          Junior Association pour proposer des services numériques
-          et physiques à des prix accessibles. Notre objectif :
-          aider les commerçants et les particuliers, tout en apprenant
-          et en construisant des projets concrets.
-        </p>
+    <div class="services-grid">
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#services">
-            Découvrir nos services <span aria-hidden="true">→</span>
+      <article class="service-card">
+        <div class="service-photo">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+            alt="Ordinateur affichant un tableau de bord web"
+            loading="lazy">
+        </div>
+        <div class="service-body">
+          <span class="service-number">01 / NUMÉRIQUE</span>
+          <h3>Création Web &amp; Maintenance</h3>
+          <p>
+            Nous concevons des sites vitrines sur mesure pour aider
+            les commerçants à présenter leur activité sur Internet.
+          </p>
+          <ul>
+            <li>Un site adapté à votre activité</li>
+            <li>Un affichage adapté au mobile</li>
+            <li>Une formule de modifications mensuelles possible</li>
+          </ul>
+          <a class="text-link" href="#contact" data-service="web">
+            En savoir plus <span>→</span>
           </a>
-          <a class="btn btn-outline" href="#contact">Nous contacter</a>
         </div>
+      </article>
 
-        <div class="hero-note">
-          Des idées pensées ici. Des services utiles au quotidien.
+      <article class="service-card">
+        <div class="service-photo">
+          <img
+            src="https://images.unsplash.com/photo-1631556097152-c39479bbff4f?auto=format&fit=crop&w=900&q=80"
+            alt="Objet imprimé en trois dimensions"
+            loading="lazy">
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTRODUCTION -->
-  <section class="intro-strip">
-    <div class="container intro-inner">
-      <p><strong>Du numérique au concret.</strong> Des projets adaptés à vos besoins.</p>
-      <span class="intro-mark">ALPHA SERVICES JUNIOR — 01</span>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section services" id="services">
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="eyebrow">Ce que nous faisons</span>
-        <h2>Nos services</h2>
-        <p>
-          Des solutions concrètes, utiles et adaptées à vos besoins,
-          que ce soit en ligne ou dans la vraie vie.
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <article class="service-card">
-          <div class="service-photo">
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
-              alt="Ordinateur affichant un tableau de bord web"
-              loading="lazy">
-          </div>
-
-          <div class="service-body">
-            <span class="service-number">01 / NUMÉRIQUE</span>
-            <h3>Création Web &amp; Maintenance</h3>
-            <p>
-              Nous concevons des sites vitrines sur mesure pour aider
-              les commerçants à présenter leur activité sur Internet.
-            </p>
-            <ul>
-              <li>Un site adapté à votre activité</li>
-              <li>Un affichage adapté au mobile</li>
-              <li>Une formule de modifications mensuelles possible</li>
-            </ul>
-            <a class="text-link" href="#contact"
-              data-service="web">En savoir plus <span>→</span></a>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-photo">
-            <img
-              src="https://images.unsplash.com/photo-1631556097152-c39479bbff4f?auto=format&fit=crop&w=900&q=80"
-              alt="Objet imprimé en trois dimensions"
-              loading="lazy">
-          </div>
-
-          <div class="service-body">
-            <span class="service-number">02 / FABRICATION</span>
-            <h3>Impression 3D &amp; Supports QR Code</h3>
-            <p>
-              Des supports physiques personnalisés pour relier
-              votre boutique à votre site web ou à vos informations.
-            </p>
-            <ul>
-              <li>Supports QR Code pour comptoir</li>
-              <li>Objets personnalisés en 3D</li>
-              <li>Un design adapté à votre boutique</li>
-            </ul>
-            <a class="text-link" href="#contact"
-              data-service="3d">En savoir plus <span>→</span></a>
-          </div>
-        </article>
-
-        <article class="service-card">
-          <div class="service-photo">
-            <img
-              src="https://images.unsplash.com/photo-1599685315640-4ec9c7b3a2d4?auto=format&fit=crop&w=900&q=80"
-              alt="Entretien d'un jardin"
-              loading="lazy">
-          </div>
-
-          <div class="service-body">
-            <span class="service-number">03 / PROXIMITÉ</span>
-            <h3>Services de Proximité</h3>
-            <p>
-              Pendant les vacances, nous souhaitons donner un coup
-              de main aux voisins pour l'entretien de leurs extérieurs.
-            </p>
-            <ul>
-              <li>Tonte de pelouse</li>
-              <li>Taille de haies selon les possibilités</li>
-              <li>Nettoyage de terrasses</li>
-            </ul>
-            <a class="text-link" href="#contact"
-              data-service="proximite">En savoir plus <span>→</span></a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- POURQUOI NOUS -->
-  <section class="section about" id="apropos">
-    <div class="container">
-
-      <div class="section-heading about-heading">
-        <span class="eyebrow">Notre état d'esprit</span>
-        <h2>Pourquoi nous choisir ?</h2>
-        <p>
-          Nous voulons proposer une autre façon de faire :
-          accessible, locale et avec un vrai échange avant chaque projet.
-        </p>
-      </div>
-
-      <div class="about-grid">
-
-        <article class="about-item">
-          <div class="about-symbol" aria-hidden="true">01</div>
-          <h3>Des prix accessibles</h3>
+        <div class="service-body">
+          <span class="service-number">02 / FABRICATION</span>
+          <h3>Impression 3D &amp; Supports QR Code</h3>
           <p>
-            Nous cherchons des solutions adaptées à votre budget,
-            avec un devis clair avant de commencer.
+            Des supports physiques personnalisés pour relier
+            votre boutique à votre site web ou à vos informations.
           </p>
-        </article>
+          <ul>
+            <li>Supports QR Code pour comptoir</li>
+            <li>Objets personnalisés en 3D</li>
+            <li>Un design adapté à votre boutique</li>
+          </ul>
+          <a class="text-link" href="#contact" data-service="3d">
+            En savoir plus <span>→</span>
+          </a>
+        </div>
+      </article>
 
-        <article class="about-item">
-          <div class="about-symbol" aria-hidden="true">02</div>
-          <h3>Un contact direct</h3>
+      <article class="service-card">
+        <div class="service-photo">
+          <img
+            src="https://images.unsplash.com/photo-1599685315640-4ec9c7b3a2d4?auto=format&fit=crop&w=900&q=80"
+            alt="Entretien d'un jardin"
+            loading="lazy">
+        </div>
+        <div class="service-body">
+          <span class="service-number">03 / PROXIMITÉ</span>
+          <h3>Services de Proximité</h3>
           <p>
-            Vous échangez directement avec nous pour expliquer
-            votre besoin et suivre l'avancement du projet.
+            Pendant les vacances, nous souhaitons donner un coup
+            de main aux voisins pour l'entretien de leurs extérieurs.
           </p>
-        </article>
+          <ul>
+            <li>Tonte de pelouse</li>
+            <li>Taille de haies selon les possibilités</li>
+            <li>Nettoyage de terrasses</li>
+          </ul>
+          <a class="text-link" href="#contact" data-service="proximite">
+            En savoir plus <span>→</span>
+          </a>
+        </div>
+      </article>
 
-        <article class="about-item">
-          <div class="about-symbol" aria-hidden="true">03</div>
-          <h3>Un projet de jeunes</h3>
-          <p>
-            En nous accompagnant, vous contribuez à une initiative
-            locale et nous aidez à développer nos compétences.
-          </p>
-        </article>
-
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- BANDEAU -->
-  <section class="statement">
-    <div class="container statement-inner">
-      <div>
-        <h2>Votre idée mérite qu'on s'y intéresse.</h2>
+<section class="section about" id="apropos">
+  <div class="container">
+    <div class="section-heading about-heading">
+      <span class="eyebrow">Notre état d'esprit</span>
+      <h2>Pourquoi nous choisir ?</h2>
+      <p>
+        Nous voulons proposer une autre façon de faire :
+        accessible, locale et avec un vrai échange avant chaque projet.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <article class="about-item">
+        <div class="about-symbol" aria-hidden="true">01</div>
+        <h3>Des prix accessibles</h3>
         <p>
-          Expliquez-nous ce que vous avez en tête.
-          Nous étudierons ensemble ce qu'il est possible de réaliser.
+          Nous cherchons des solutions adaptées à votre budget,
+          avec un devis clair avant de commencer.
         </p>
-      </div>
-      <a class="btn" href="#contact">Parler de mon projet →</a>
+      </article>
+
+      <article class="about-item">
+        <div class="about-symbol" aria-hidden="true">02</div>
+        <h3>Un contact direct</h3>
+        <p>
+          Vous échangez directement avec nous pour expliquer
+          votre besoin et suivre l'avancement du projet.
+        </p>
+      </article>
+
+      <article class="about-item">
+        <div class="about-symbol" aria-hidden="true">03</div>
+        <h3>Un projet de jeunes</h3>
+        <p>
+          En nous accompagnant, vous contribuez à une initiative
+          locale et nous aidez à développer nos compétences.
+        </p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <div class="container contact-grid">
+<section class="statement">
+  <div class="container statement-inner">
+    <div>
+      <h2>Votre idée mérite qu'on s'y intéresse.</h2>
+      <p>
+        Expliquez-nous ce que vous avez en tête.
+        Nous étudierons ensemble ce qu'il est possible de réaliser.
+      </p>
+    </div>
+    <a class="btn" href="#contact">Parler de mon projet →</a>
+  </div>
+</section>
 
-      <div>
-        <span class="eyebrow">Entrons en contact</span>
-        <h2>Contactez-nous.</h2>
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
 
-        <p class="contact-intro">
-          Vous avez un projet ? Une question ?
-          Décrivez-nous votre demande pour que nous puissions
-          en discuter et préparer une proposition.
-        </p>
+    <div>
+      <span class="eyebrow">Entrons en contact</span>
+      <h2>Contactez-nous.</h2>
+      <p class="contact-intro">
+        Vous avez un projet ? Une question ?
+        Décrivez-nous votre demande pour que nous puissions
+        en discuter et préparer une proposition.
+      </p>
 
-        <div class="contact-details">
-          <div class="contact-detail">
-            <strong>Notre secteur</strong>
-            <p>Interventions locales, selon la demande.</p>
-          </div>
-          <div class="contact-detail">
-            <strong>Notre fonctionnement</strong>
-            <p>Chaque projet est étudié avant toute proposition.</p>
-          </div>
-          <div class="contact-detail">
-            <strong>Nos disponibilités</strong>
-            <p>Selon les horaires scolaires et les périodes de vacances.</p>
-          </div>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <strong>Notre secteur</strong>
+          <p>Interventions locales, selon la demande.</p>
+        </div>
+        <div class="contact-detail">
+          <strong>Notre fonctionnement</strong>
+          <p>Chaque projet est étudié avant toute proposition.</p>
+        </div>
+        <div class="contact-detail">
+          <strong>Nos disponibilités</strong>
+          <p>Selon les horaires scolaires et les périodes de vacances.</p>
         </div>
       </div>
+    </div>
 
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nom *</label>
-            <input id="name" name="name" type="text"
-              placeholder="Votre nom" autocomplete="name"
-              maxlength="100" required>
-          </div>
+    <!-- FORMULAIRE D'ENVOI PAR E-MAIL -->
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/noa.fagegaltie@gmail.com"
+      method="POST"
+    >
+      <!-- Copie envoyée à Lev -->
+      <input type="hidden" name="_cc"
+        value="lev.gruyaert@gmail.com">
 
-          <div class="form-group">
-            <label for="email">E-mail *</label>
-            <input id="email" name="email" type="email"
-              placeholder="vous@exemple.fr" autocomplete="email"
-              maxlength="254" required>
-          </div>
+      <!-- Objet du mail -->
+      <input type="hidden" name="_subject"
+        value="Nouvelle demande de devis - Alpha Services Junior">
+
+      <!-- Présentation du mail reçu -->
+      <input type="hidden" name="_template" value="table">
+
+      <!-- Protection anti-spam -->
+      <input type="hidden" name="_captcha" value="true">
+
+      <!-- Champ anti-robot invisible -->
+      <input type="text" name="_honey"
+        tabindex="-1" autocomplete="off"
+        aria-hidden="true"
+        style="position:absolute;left:-9999px;width:1px;height:1px;">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nom *</label>
+          <input id="name" name="Nom" type="text"
+            placeholder="Votre nom" autocomplete="name"
+            maxlength="100" required>
         </div>
 
         <div class="form-group">
-          <label for="service">Service souhaité</label>
-          <select id="service" name="service">
-            <option value="Demande générale">Choisir un service</option>
-            <option value="Création Web & Maintenance">Création Web &amp; Maintenance</option>
-            <option value="Impression 3D & QR Code">Impression 3D &amp; QR Code</option>
-            <option value="Services de proximité">Services de proximité</option>
-            <option value="Autre demande">Autre demande</option>
-          </select>
+          <label for="email">E-mail *</label>
+          <input id="email" name="E-mail" type="email"
+            placeholder="vous@exemple.fr" autocomplete="email"
+            maxlength="254" required>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message"
-            placeholder="Décrivez votre projet ou votre demande..."
-            maxlength="3000" required></textarea>
-        </div>
+      <div class="form-group">
+        <label for="service">Service souhaité</label>
+        <select id="service" name="Service">
+          <option value="Demande générale">Choisir un service</option>
+          <option value="Création Web & Maintenance">Création Web &amp; Maintenance</option>
+          <option value="Impression 3D & QR Code">Impression 3D &amp; QR Code</option>
+          <option value="Services de proximité">Services de proximité</option>
+          <option value="Autre demande">Autre demande</option>
+        </select>
+      </div>
 
-        <button class="btn btn-primary" type="submit">
-          Préparer ma demande <span aria-hidden="true">→</span>
-        </button>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="Message"
+          placeholder="Décrivez votre projet ou votre demande..."
+          maxlength="3000" required></textarea>
+      </div>
 
-        <p class="form-note">
-          Démonstration : votre message sera préparé dans votre
-          application e-mail. Il ne sera pas envoyé automatiquement.
-        </p>
+      <button class="btn btn-primary" type="submit">
+        Envoyer ma demande <span aria-hidden="true">→</span>
+      </button>
 
-        <div class="form-status" id="formStatus"
-          role="status" aria-live="polite" hidden></div>
-      </form>
+      <p class="form-note">
+        Votre demande sera transmise par notre prestataire d'e-mail.
+        N'indiquez pas d'informations confidentielles dans le formulaire.
+      </p>
+    </form>
 
-    </div>
-  </section>
+  </div>
+</section>
 
 </main>
 
@@ -1169,6 +1160,7 @@ function closeMenu() {
 
 menuToggle.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");
+
   menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.setAttribute(
     "aria-label",
@@ -1190,7 +1182,7 @@ window.addEventListener("resize", () => {
 document.getElementById("year").textContent =
   new Date().getFullYear();
 
-/* SÉLECTION AUTOMATIQUE DU SERVICE */
+/* PRÉ-SÉLECTION DU SERVICE DEPUIS LES CARTES */
 
 const serviceSelect = document.getElementById("service");
 
@@ -1206,67 +1198,11 @@ document.querySelectorAll("[data-service]").forEach(link => {
   });
 });
 
-/* FORMULAIRE DE DÉMONSTRATION */
-
-const form = document.getElementById("contactForm");
-const statusBox = document.getElementById("formStatus");
-
-/* Remplace par votre adresse de contact avant publication. */
-const CONTACT_EMAIL = "";
-
-form.addEventListener("submit", event => {
-  event.preventDefault();
-
-  if (!form.reportValidity()) return;
-
-  const data = new FormData(form);
-  const name = String(data.get("name") || "").trim();
-  const email = String(data.get("email") || "").trim();
-  const service = String(data.get("service") || "");
-  const message = String(data.get("message") || "").trim();
-
-  if (!name || !email || !message) {
-    showStatus("Merci de remplir les champs obligatoires.", "error");
-    return;
-  }
-
-  if (!CONTACT_EMAIL.trim()) {
-    showStatus(
-      "Le formulaire est prêt, mais aucune adresse de destination " +
-      "n'est configurée. Renseignez CONTACT_EMAIL dans le code.",
-      "info"
-    );
-    return;
-  }
-
-  const subject = "Demande de contact — " + service;
-  const body = [
-    "Bonjour Alpha Services Junior,",
-    "",
-    "Nom : " + name,
-    "E-mail : " + email,
-    "Service : " + service,
-    "",
-    "Message :",
-    message
-  ].join("\n");
-
-  showStatus(
-    "Votre application e-mail va s'ouvrir. Vérifiez le message puis envoyez-le.",
-    "info"
-  );
-
-  window.location.href =
-    "mailto:" + CONTACT_EMAIL.trim() +
-    "?subject=" + encodeURIComponent(subject) +
-    "&body=" + encodeURIComponent(body);
-});
-
-function showStatus(message, type) {
-  statusBox.textContent = message;
-  statusBox.className = "form-status " + type;
-  statusBox.hidden = false;
-}
+/*
+Le formulaire utilise directement FormSubmit.
+Ne pas ajouter preventDefault() au formulaire :
+cela empêcherait son envoi normal.
+*/
 </script>
 
 </body>
